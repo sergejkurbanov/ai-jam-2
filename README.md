@@ -29,14 +29,14 @@ npm install
 ```
 
 (`zaloha-1` a `krok-3` si přepiš podle sebe.) Nebo to řekni Claudovi:
-*„Ulož moji práci do větve zaloha-1 a přepni mě na checkpoint origin/krok-3.“*
+_„Ulož moji práci do větve zaloha-1 a přepni mě na checkpoint origin/krok-3.“_
 
-| Větev | Kde jsme |
-|---|---|
-| `main` | prázdný start: jen zadání, skica a obrázky koní |
-| `krok-1` | projekt založený, CLAUDE.md, formátovací hook |
+| Větev    | Kde jsme                                                  |
+| -------- | --------------------------------------------------------- |
+| `main`   | prázdný start: jen zadání, skica a obrázky koní           |
+| `krok-1` | projekt založený, CLAUDE.md, formátovací hook             |
 | `krok-2` | karta koně podle skici, design tokeny, skill na nové koně |
-| `krok-3` | swipe, shody, testy, localStorage |
-| `krok-4` | seznam shod (a 3 schválně schované chyby 🐛) |
-| `krok-5` | chyby opravené, mobil a přístupnost doladěné |
-| `krok-6` | nasazeno na GitHub Pages 🚀 |
+| `krok-3` | swipe, shody, testy, localStorage                         |
+| `krok-4` | seznam shod (a 3 schválně schované chyby 🐛)              |
+| `krok-5` | chyby opravené, mobil a přístupnost doladěné              |
+| `krok-6` | nasazeno na GitHub Pages 🚀                               |
