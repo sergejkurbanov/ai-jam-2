@@ -30,3 +30,7 @@ React 19 + TypeScript + Vite, Tailwind CSS v4 (design tokeny v `src/index.css` p
 - Kontrast textu aspoň 4,5 : 1. Když nesedí, oprav token v `src/index.css`, ne jednu komponentu.
 - Animace přes `motion` respektují „omezit pohyb“ (`MotionConfig reducedMotion="user"` v `App.tsx`).
 - Po větší změně UI pusť subagenta `a11y-reviewer` a zkontroluj šířku 375 px i desktop.
+
+## Nasazení
+
+Push do `main` spustí `.github/workflows/deploy.yml`: testy, build a GitHub Pages. `base: './'` ve `vite.config.ts` drží cesty relativní, takže appka funguje na `https://<uživatel>.github.io/<repo>/`. Obrázky odkazuj relativně (`kone/bara.svg`), ne od kořene (`/kone/…`).

@@ -40,3 +40,14 @@ _„Ulož moji práci do větve zaloha-1 a přepni mě na checkpoint origin/krok
 | `krok-4` | seznam shod (a 3 schválně schované chyby 🐛)              |
 | `krok-5` | chyby opravené, mobil a přístupnost doladěné              |
 | `krok-6` | nasazeno na GitHub Pages 🚀                               |
+
+## Nasazení na GitHub Pages
+
+```bash
+git remote rename origin jam
+gh repo create konicek --public --source=. --remote=origin --push
+gh api -X POST repos/{owner}/{repo}/pages -f build_type=workflow
+```
+
+Pak stačí každý `git push` a za minutu je nová verze na `https://<tvůj-github>.github.io/konicek/`.
+Postup je v `.github/workflows/deploy.yml`.
