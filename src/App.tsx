@@ -1,10 +1,25 @@
+import { useState } from 'react'
+import { ActionButtons } from './components/ActionButtons'
+import { Header } from './components/Header'
+import { HorseCard } from './components/HorseCard'
+import { horses } from './data/horses'
+
 export default function App() {
+  const [index, setIndex] = useState(0)
+  const horse = horses[index]
+  const next = () => setIndex((i) => i + 1)
+
   return (
-    <main className="grid min-h-dvh place-items-center p-6 text-center">
-      <div>
-        <h1 className="text-4xl font-bold">Koníček 🐴</h1>
-        <p className="mt-2 text-lg">Brzy tu budou koně.</p>
-      </div>
-    </main>
+    <div className="mx-auto flex h-dvh max-w-md flex-col">
+      <Header matchCount={0} />
+      <main className="relative mx-4 min-h-0 flex-1">
+        {horse ? (
+          <HorseCard key={horse.id} horse={horse} />
+        ) : (
+          <p className="grid h-full place-items-center text-xl font-bold">Došli koně! 🐴</p>
+        )}
+      </main>
+      <ActionButtons onNope={next} onLike={next} />
+    </div>
   )
 }

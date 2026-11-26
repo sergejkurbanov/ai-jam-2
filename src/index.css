@@ -1,1 +1,32 @@
 @import 'tailwindcss';
+
+/* Design tokens: the only place for colors, fonts, radii and shadows. */
+@theme {
+  --font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+
+  --color-hay-50: #fffaf2;
+  --color-hay-100: #fff1dc;
+  --color-hay-200: #ffe2b8;
+  --color-ink: #2b1d14;
+  --color-muted: #7a6656;
+  --color-carrot: #ff6b2c;
+  --color-carrot-dark: #d9531a;
+  --color-rose: #ff4f7b;
+  --color-rose-dark: #e0305e;
+
+  --radius-card: 2rem;
+  --shadow-card: 0 24px 48px -16px rgb(43 29 20 / 0.35);
+  --shadow-button: 0 10px 24px -10px rgb(43 29 20 / 0.45);
+}
+
+@layer base {
+  body {
+    @apply bg-hay-50 font-sans text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+}
