@@ -21,8 +21,7 @@ Přihlas se a otevři záložku **Code**. Claude Code je v appce už v sobě, ni
 
 Zkontroluj v terminálu, jestli už ho máš: `git --version` (stačí jakákoliv verze).
 
-<details>
-<summary><b>macOS</b></summary>
+**macOS:** v terminálu spusť
 
 ```bash
 xcode-select --install
@@ -30,14 +29,7 @@ xcode-select --install
 
 (Nebo přes [Homebrew](https://brew.sh): `brew install git`.)
 
-</details>
-
-<details>
-<summary><b>Windows</b></summary>
-
-Stáhni a nainstaluj [Git for Windows](https://git-scm.com/install/windows). Všechno nech ve výchozím nastavení.
-
-</details>
+**Windows:** stáhni a nainstaluj [Git for Windows](https://git-scm.com/install/windows). Všechno nech ve výchozím nastavení.
 
 Pak gitu řekni, kdo jsi:
 
