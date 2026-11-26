@@ -1,0 +1,182 @@
+[
+  {
+    "id": "bara",
+    "name": "Bára",
+    "age": 6,
+    "breed": "Hafling",
+    "distanceKm": 3,
+    "likesYou": true,
+    "bio": "Hledám někoho na dlouhé procházky po louce. Seno platím já.",
+    "interests": [
+      "louky",
+      "mrkev",
+      "západy slunce"
+    ],
+    "photo": "kone/bara.svg"
+  },
+  {
+    "id": "trojan",
+    "name": "Trojan",
+    "age": 3200,
+    "breed": "Trojský kůň (dřevěný)",
+    "distanceKm": 1840,
+    "likesYou": true,
+    "bio": "Uvnitř mám velké překvapení. Stačí otevřít bránu 😉",
+    "interests": [
+      "historie",
+      "překvapení",
+      "řecká kuchyně"
+    ],
+    "photo": "kone/trojan.svg"
+  },
+  {
+    "id": "pepik",
+    "name": "Pepík",
+    "age": 9,
+    "breed": "Shetlandský pony",
+    "distanceKm": 1,
+    "likesYou": false,
+    "bio": "Malý, ale šikovný. Vejdu se do výtahu i do tvého srdce.",
+    "interests": [
+      "výtahy",
+      "jablka",
+      "špatné vtipy"
+    ],
+    "photo": "kone/pepik.svg"
+  },
+  {
+    "id": "hvezda",
+    "name": "Hvězda",
+    "age": 5,
+    "breed": "Arabský plnokrevník",
+    "distanceKm": 12,
+    "likesYou": true,
+    "bio": "Ráno běhám 40 km, odpoledne protahování. Hledám parťačku na cardio.",
+    "interests": [
+      "běh",
+      "protein",
+      "chytré hodinky"
+    ],
+    "photo": "kone/hvezda.svg"
+  },
+  {
+    "id": "unicornelius",
+    "name": "Unicornelius",
+    "age": 2,
+    "breed": "Jednorožec (startup)",
+    "distanceKm": 7,
+    "likesYou": false,
+    "bio": "Technicky jsem taky kůň. Valuace miliarda, zisk zatím nula.",
+    "interests": [
+      "investoři",
+      "pitch decky",
+      "duhy"
+    ],
+    "photo": "kone/unicornelius.svg"
+  },
+  {
+    "id": "doubek",
+    "name": "Doubek",
+    "age": 14,
+    "breed": "Starokladrubský kůň",
+    "distanceKm": 64,
+    "likesYou": true,
+    "bio": "Senior developer. Kóduju od dob jQuery. Mezery, ne taby. O tom se nediskutuje.",
+    "interests": [
+      "refaktoring",
+      "Vim",
+      "ovesná kaše"
+    ],
+    "photo": "kone/doubek.svg"
+  },
+  {
+    "id": "lucka",
+    "name": "Lucka",
+    "age": 4,
+    "breed": "Appaloosa",
+    "distanceKm": 9,
+    "likesYou": true,
+    "bio": "Mám puntíky jako tvůj první web z roku 2003. A stejně tak ráda bliká.",
+    "interests": [
+      "retro",
+      "GIFy",
+      "karaoke"
+    ],
+    "photo": "kone/lucka.svg"
+  },
+  {
+    "id": "ferda",
+    "name": "Ferda",
+    "age": 7,
+    "breed": "Fríský kůň",
+    "distanceKm": 23,
+    "likesYou": false,
+    "bio": "Kudrnatá hříva, žádné drama. Fotky z gotického focení na požádání.",
+    "interests": [
+      "focení",
+      "poezie",
+      "kondicionér"
+    ],
+    "photo": "kone/ferda.svg"
+  },
+  {
+    "id": "daisy",
+    "name": "Daisy",
+    "age": 8,
+    "breed": "Mustang",
+    "distanceKm": 31,
+    "likesYou": true,
+    "bio": "Divoká duše. Ohrady nesnáším. Ty ji klidně otevři, já budu za horizontem.",
+    "interests": [
+      "volnost",
+      "kempování",
+      "country"
+    ],
+    "photo": "kone/daisy.svg"
+  },
+  {
+    "id": "zofka",
+    "name": "Žofka",
+    "age": 11,
+    "breed": "Huculský kůň",
+    "distanceKm": 140,
+    "likesYou": false,
+    "bio": "Hory, turistika a tatranky. Ty poneseš batoh, já ponesu tebe.",
+    "interests": [
+      "hory",
+      "tatranky",
+      "mapy.cz"
+    ],
+    "photo": "kone/zofka.svg"
+  },
+  {
+    "id": "max",
+    "name": "Max",
+    "age": 6,
+    "breed": "Lipicán",
+    "distanceKm": 210,
+    "likesYou": true,
+    "bio": "Tančím ve Vídni, ale srdce mám v Brně. Umím valčík i kroket.",
+    "interests": [
+      "balet",
+      "Vídeň",
+      "kroket"
+    ],
+    "photo": "kone/max.svg"
+  },
+  {
+    "id": "hopik",
+    "name": "Hopík",
+    "age": 1,
+    "breed": "Houpací kůň",
+    "distanceKm": 0.2,
+    "likesYou": false,
+    "bio": "Nejsem moc upovídaný, ale houpu skvěle. Najdeš mě v dětském pokoji.",
+    "interests": [
+      "houpání",
+      "Vánoce",
+      "dětský pokoj"
+    ],
+    "photo": "kone/hopik.svg"
+  }
+]
