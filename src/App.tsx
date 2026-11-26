@@ -1,25 +1,74 @@
-import { useState } from 'react'
+import { AnimatePresence } from 'motion/react'
+import { useEffect, useState } from 'react'
 import { ActionButtons } from './components/ActionButtons'
 import { Header } from './components/Header'
 import { HorseCard } from './components/HorseCard'
+import { MatchModal } from './components/MatchModal'
+import { SwipeCard } from './components/SwipeCard'
 import { horses } from './data/horses'
+import { useSwipeState } from './hooks/useSwipeState'
+import { isMatch, remaining, type Decision } from './lib/swipe'
+import type { Horse } from './types'
 
 export default function App() {
-  const [index, setIndex] = useState(0)
-  const horse = horses[index]
-  const next = () => setIndex((i) => i + 1)
+  const { state, decide, restart } = useSwipeState()
+  const [exitDirection, setExitDirection] = useState(1)
+  const [match, setMatch] = useState<Horse | null>(null)
+
+  const deck = remaining(horses, state)
+  const [top, next] = deck
+
+  function handleDecide(decision: Decision) {
+    if (!top || match) return
+    setExitDirection(decision === 'like' ? 1 : -1)
+    decide(top, decision)
+    if (isMatch(top, decision)) setMatch(top)
+  }
+
+  useEffect(() => {
+    function onKey(event: KeyboardEvent) {
+      if (event.key === 'ArrowLeft') handleDecide('nope')
+      if (event.key === 'ArrowRight') handleDecide('like')
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  })
 
   return (
-    <div className="mx-auto flex h-dvh max-w-md flex-col">
-      <Header matchCount={0} />
+    <div className="mx-auto flex h-dvh max-w-md flex-col overflow-hidden">
+      <Header matchCount={state.matches.length} />
       <main className="relative mx-4 min-h-0 flex-1">
-        {horse ? (
-          <HorseCard key={horse.id} horse={horse} />
-        ) : (
-          <p className="grid h-full place-items-center text-xl font-bold">Došli koně! 🐴</p>
+        {next && (
+          <div className="absolute inset-0 scale-95 opacity-60" aria-hidden="true">
+            <HorseCard horse={next} />
+          </div>
+        )}
+        <AnimatePresence custom={exitDirection}>
+          {top && <SwipeCard key={top.id} horse={top} onDecide={handleDecide} />}
+        </AnimatePresence>
+        {!top && (
+          <div className="grid h-full place-items-center text-center">
+            <div>
+              <p className="text-6xl" aria-hidden="true">
+                🐴💨
+              </p>
+              <h2 className="mt-4 text-3xl font-extrabold">Došli koně!</h2>
+              <p className="mt-2 text-muted">Všechny jsi projela. Seno zatím nikdo nedoplnil.</p>
+              <button
+                type="button"
+                onClick={restart}
+                className="mt-6 rounded-full bg-carrot px-6 py-3 font-bold text-white shadow-button transition hover:bg-carrot-dark"
+              >
+                Začít znovu
+              </button>
+            </div>
+          </div>
         )}
       </main>
-      <ActionButtons onNope={next} onLike={next} />
+      <ActionButtons onNope={() => handleDecide('nope')} onLike={() => handleDecide('like')} />
+      <AnimatePresence>
+        {match && <MatchModal horse={match} onClose={() => setMatch(null)} />}
+      </AnimatePresence>
     </div>
   )
 }
