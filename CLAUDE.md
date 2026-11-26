@@ -23,3 +23,10 @@ React 19 + TypeScript + Vite, Tailwind CSS v4 (design tokeny v `src/index.css` p
 - Nové závislosti jen po domluvě se mnou.
 - Než řekneš „hotovo“, spusť `npm run build` a `npm test`. Obojí musí projít.
 - Commituj po malých krocích, zprávy česky v rozkazovacím způsobu („Přidej kartu koně“).
+
+## Přístupnost a mobil
+
+- Tlačítka jen s ikonou mají `aria-label`, dekorativní emoji `aria-hidden="true"`.
+- Kontrast textu aspoň 4,5 : 1. Když nesedí, oprav token v `src/index.css`, ne jednu komponentu.
+- Animace přes `motion` respektují „omezit pohyb“ (`MotionConfig reducedMotion="user"` v `App.tsx`).
+- Po větší změně UI pusť subagenta `a11y-reviewer` a zkontroluj šířku 375 px i desktop.

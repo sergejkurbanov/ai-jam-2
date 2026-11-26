@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Horse } from '../types'
-import { decide, initialState, remaining, restart } from './swipe'
+import { countMatches, decide, initialState, remaining, restart } from './swipe'
 
 const horse = (id: string, likesYou: boolean): Horse => ({
   id,
@@ -45,5 +45,12 @@ describe('remaining', () => {
   it('skips horses you already decided about', () => {
     const state = decide(initialState, bara, 'nope')
     expect(remaining([bara, pepik], state)).toEqual([pepik])
+  })
+})
+
+describe('countMatches', () => {
+  it('counts only mutual likes, not every like', () => {
+    const state = decide(decide(initialState, bara, 'like'), pepik, 'like')
+    expect(countMatches(state)).toBe(1)
   })
 })

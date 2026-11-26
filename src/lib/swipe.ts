@@ -37,5 +37,5 @@ export function restart(state: SwipeState): SwipeState {
 
 /** Number of matches, for the badge in the header. */
 export function countMatches(state: SwipeState): number {
-  return Object.values(state.decisions).filter((decision) => decision === 'like').length
+  return state.matches.length
 }

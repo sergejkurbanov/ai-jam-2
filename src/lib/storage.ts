@@ -8,7 +8,11 @@ type Stored = SwipeState & { version: number }
 function isValid(value: unknown): value is Stored {
   const stored = value as Partial<Stored> | null
   return (
-    stored?.version === VERSION && Array.isArray(stored.decisions) && Array.isArray(stored.matches)
+    stored?.version === VERSION &&
+    typeof stored.decisions === 'object' &&
+    stored.decisions !== null &&
+    !Array.isArray(stored.decisions) &&
+    Array.isArray(stored.matches)
   )
 }
 

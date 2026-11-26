@@ -42,12 +42,14 @@ export function SwipeCard({ horse, onDecide }: Props) {
     >
       <HorseCard horse={horse} />
       <motion.span
+        aria-hidden="true"
         style={{ opacity: likeOpacity }}
         className="absolute top-8 left-6 -rotate-12 rounded-xl border-4 border-rose px-3 py-1 font-display text-4xl font-extrabold text-rose"
       >
         ÍHAHÁ!
       </motion.span>
       <motion.span
+        aria-hidden="true"
         style={{ opacity: nopeOpacity }}
         className="absolute top-8 right-6 rotate-12 rounded-xl border-4 border-white px-3 py-1 font-display text-4xl font-extrabold text-white"
       >
