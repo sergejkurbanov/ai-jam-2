@@ -31,7 +31,6 @@ na `krok-4`, takže zpoždění z bloku 2 se tam smaže.
 - [ ] Push repa: větve `web` (výchozí), `main`, `krok-0` … `krok-6`. Na GitHubu nastav výchozí větev na `web`.
 - [ ] GitHub Pages pro prezentaci (Settings → Pages → GitHub Actions). Pro větev `web` povol nasazení v Settings → Environments → github-pages.
 - [ ] Rozeslat [`instalace.md`](instalace.md) aspoň týden předem, sbírat screenshoty z ověření.
-- [ ] Guest passy (`/passes` v Claude Code) pro ty, kdo nemají Pro.
 - [ ] Projet si celý workshop načisto se stopkami, na stejném plánu (Pro) jako účastnice, ať víš, kde dojdou limity.
 - [ ] Na místě: Wi-Fi heslo na slajd 3, prodlužky, adaptéry na HDMI.
 - [ ] Kouče seznámit s touhle stránkou a s chybami v `krok-4`.

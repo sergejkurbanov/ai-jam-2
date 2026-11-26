@@ -10,8 +10,6 @@ Kdyby cokoliv nešlo, napiš nám na Slack. Rádi pomůžeme a na místě to nik
 Claude Code není ve verzi zdarma. Potřebuješ **Claude Pro** (cca 20 $ měsíčně + DPH, jde kdykoliv zrušit)
 nebo vyšší plán (Max, Team). Založíš ho na [claude.ai](https://claude.ai).
 
-> Platit nechceš nebo nemůžeš? Napiš nám. Zkusíme ti sehnat týdenní zkušební pozvánku (guest pass).
-
 ## 2. Desktopová appka Claude
 
 Stáhni a nainstaluj z [claude.com/download](https://claude.com/download) (macOS i Windows).

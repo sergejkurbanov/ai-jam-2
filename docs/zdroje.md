@@ -14,7 +14,7 @@ Podklady k prezentaci, posbírané 26. 11. 2026. Co se nepodařilo ověřit z pr
 - MCP: [mcp](https://code.claude.com/docs/en/mcp) · Claude in Chrome: [chrome](https://code.claude.com/docs/en/chrome)
 - Checkpointy a `/rewind`: [checkpointing](https://code.claude.com/docs/en/checkpointing) · Výstupní styly: [output-styles](https://code.claude.com/docs/en/output-styles)
 - Co je nového: [whats-new](https://code.claude.com/docs/en/whats-new) · [CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
-- Ceny: [claude.com/pricing](https://www.claude.com/pricing) · Guest passy: [support článek](https://support.claude.com/en/articles/13456702)
+- Ceny: [claude.com/pricing](https://www.claude.com/pricing)
 
 ### Fakta, na která se v prezentaci odkazujeme
 

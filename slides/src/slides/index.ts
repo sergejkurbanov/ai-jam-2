@@ -74,7 +74,7 @@ Na učení doporučuju Manual nebo Plan, ať vidíte, co dělá. Kdo jede v CLI,
   {
     id: 'krok0', title: 'Krok 0: rozhlédni se', steps: 1, minutes: 5, Component: Krok0Slide, section: INTRO,
     notes: `5 minut, pomalý rozjezd (minule jste chtěly pomalejší start).
-Obejít sál s kouči: má každá claude přihlášený? Kdo nemá Pro, ať se přidá ke kamarádce nebo použije guest pass.`,
+Obejít sál s kouči: má každá claude přihlášený? Kdo nemá Pro, ať se přidá ke kamarádce.`,
   },
 
   // ------------------------------------------------------------------ blok 1 (40 min)
