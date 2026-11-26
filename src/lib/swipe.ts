@@ -34,3 +34,8 @@ export function remaining(horses: Horse[], state: SwipeState): Horse[] {
 export function restart(state: SwipeState): SwipeState {
   return { ...state, decisions: {} }
 }
+
+/** Number of matches, for the badge in the header. */
+export function countMatches(state: SwipeState): number {
+  return Object.values(state.decisions).filter((decision) => decision === 'like').length
+}

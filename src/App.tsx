@@ -4,22 +4,29 @@ import { ActionButtons } from './components/ActionButtons'
 import { Header } from './components/Header'
 import { HorseCard } from './components/HorseCard'
 import { MatchModal } from './components/MatchModal'
+import { MatchesList } from './components/MatchesList'
 import { SwipeCard } from './components/SwipeCard'
 import { horses } from './data/horses'
 import { useSwipeState } from './hooks/useSwipeState'
-import { isMatch, remaining, type Decision } from './lib/swipe'
+import { countMatches, isMatch, remaining, type Decision } from './lib/swipe'
 import type { Horse } from './types'
 
 export default function App() {
   const { state, decide, restart } = useSwipeState()
   const [exitDirection, setExitDirection] = useState(1)
   const [match, setMatch] = useState<Horse | null>(null)
+  const [view, setView] = useState<'swipe' | 'matches'>('swipe')
 
   const deck = remaining(horses, state)
   const [top, next] = deck
+  const matchedHorses = horses.filter((horse) => state.matches.includes(horse.id))
+
+  useEffect(() => {
+    document.title = `${top.name} · Koníček 🐴`
+  }, [top])
 
   function handleDecide(decision: Decision) {
-    if (!top || match) return
+    if (!top || match || view !== 'swipe') return
     setExitDirection(decision === 'like' ? 1 : -1)
     decide(top, decision)
     if (isMatch(top, decision)) setMatch(top)
@@ -36,36 +43,44 @@ export default function App() {
 
   return (
     <div className="mx-auto flex h-dvh max-w-md flex-col overflow-hidden">
-      <Header matchCount={state.matches.length} />
-      <main className="relative mx-4 min-h-0 flex-1">
-        {next && (
-          <div className="absolute inset-0 scale-95 opacity-60" aria-hidden="true">
-            <HorseCard horse={next} />
-          </div>
-        )}
-        <AnimatePresence custom={exitDirection}>
-          {top && <SwipeCard key={top.id} horse={top} onDecide={handleDecide} />}
-        </AnimatePresence>
-        {!top && (
-          <div className="grid h-full place-items-center text-center">
-            <div>
-              <p className="text-6xl" aria-hidden="true">
-                🐴💨
-              </p>
-              <h2 className="mt-4 text-3xl font-extrabold">Došli koně!</h2>
-              <p className="mt-2 text-muted">Všechny jsi projela. Seno zatím nikdo nedoplnil.</p>
-              <button
-                type="button"
-                onClick={restart}
-                className="mt-6 rounded-full bg-carrot px-6 py-3 font-bold text-white shadow-button transition hover:bg-carrot-dark"
-              >
-                Začít znovu
-              </button>
-            </div>
-          </div>
-        )}
-      </main>
-      <ActionButtons onNope={() => handleDecide('nope')} onLike={() => handleDecide('like')} />
+      <Header matchCount={countMatches(state)} onShowMatches={() => setView('matches')} />
+      {view === 'matches' ? (
+        <MatchesList matches={matchedHorses} onBack={() => setView('swipe')} />
+      ) : (
+        <>
+          <main className="relative mx-4 min-h-0 flex-1">
+            {next && (
+              <div className="absolute inset-0 scale-95 opacity-60" aria-hidden="true">
+                <HorseCard horse={next} />
+              </div>
+            )}
+            <AnimatePresence custom={exitDirection}>
+              {top && <SwipeCard key={top.id} horse={top} onDecide={handleDecide} />}
+            </AnimatePresence>
+            {!top && (
+              <div className="grid h-full place-items-center text-center">
+                <div>
+                  <p className="text-6xl" aria-hidden="true">
+                    🐴💨
+                  </p>
+                  <h2 className="mt-4 text-3xl font-extrabold">Došli koně!</h2>
+                  <p className="mt-2 text-muted">
+                    Všechny jsi projela. Seno zatím nikdo nedoplnil.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={restart}
+                    className="mt-6 rounded-full bg-carrot px-6 py-3 font-bold text-white shadow-button transition hover:bg-carrot-dark"
+                  >
+                    Začít znovu
+                  </button>
+                </div>
+              </div>
+            )}
+          </main>
+          <ActionButtons onNope={() => handleDecide('nope')} onLike={() => handleDecide('like')} />
+        </>
+      )}
       <AnimatePresence>
         {match && <MatchModal horse={match} onClose={() => setMatch(null)} />}
       </AnimatePresence>
