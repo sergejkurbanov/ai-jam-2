@@ -37,19 +37,21 @@ Rozdíl mezi dvěma kroky uvidíš přes `git diff origin/krok-2 origin/krok-3`.
 
 ## Krok 0: Start (18:15)
 
+V terminálu stáhni projekt:
+
 ```bash
 git clone -b main https://github.com/sergejkurbanov/ai-jam-2.git konicek
-cd konicek
-claude
 ```
 
-V Claudovi si zkus:
+Pak v appce Claude otevři záložku **Code**, pod polem pro zprávu vyber **Local** a přes **Open folder…** otevři složku `konicek`.
 
-- `/model`: jaký model používáš
-- `Shift+Tab`: přepínání režimů (ruční schvalování → automatické úpravy → **plán** → auto)
-- `@podklady/brief.md` ve zprávě: přiloží soubor
-- `!git status`: pustí příkaz v terminálu, aniž bys odcházela z Clauda
-- `Esc`: zastaví Clauda uprostřed práce. `Esc Esc`: vrátí se v čase
+Rozhlédni se:
+
+- **přepínač režimů** pod polem pro zprávu (na Macu `⌘⇧M`): Manual → Accept edits → **Plan** → Auto
+- `@podklady/brief.md` ve zprávě: přiloží soubor. Obrázek přidáš přes **+** nebo přetažením
+- `Esc` (nebo tlačítko stop): zastaví Clauda uprostřed práce
+- `` Ctrl+` ``: terminál přímo v appce. `⌘⇧B` / `Ctrl+Shift+B`: vestavěný prohlížeč
+- `⌘N` / `Ctrl+N`: nová session (čistá hlava pro nový úkol)
 
 ---
 
@@ -57,7 +59,7 @@ V Claudovi si zkus:
 
 ### Krok 1: Založení projektu a CLAUDE.md
 
-**1. Ať se tě Claude vyptá.** Přepni na plán (`Shift+Tab`, dokud neuvidíš *plan mode*) a napiš:
+**1. Ať se tě Claude vyptá.** V přepínači režimů vyber **Plan** a napiš:
 
 ```text
 Přečti si @podklady/brief.md a prohlédni si @podklady/skica.png.
@@ -113,13 +115,10 @@ Commitni to.
 
 ### Krok 2: Karta koně podle skici
 
-**1. Nový úkol = nový kontext.** Napiš `/clear`.
+**1. Nový úkol = nový kontext.** Začni novou session (`⌘N` / `Ctrl+N`) ve stejné složce.
 
 **2. (Volitelné) Přidej Claudovi vkus.** Oficiální plugin, který učí Clauda vyhýbat se „AI vzhledu“:
-
-```text
-/plugin install frontend-design@claude-plugins-official
-```
+klikni na **+** vedle pole pro zprávu → **Plugins**, najdi **frontend-design** a nainstaluj.
 
 **3. Ze skici do komponent.**
 
@@ -134,12 +133,16 @@ Nejdřív nadefinuj design tokeny v src/index.css přes @theme a pak používej 
 Mobil první.
 ```
 
-**4. Dej Claudovi oči.** Spusť Clauda s prohlížečem (`/exit` a pak `claude --chrome`, nebo `/chrome`) a napiš:
+**4. Dej Claudovi oči.** Appka má vestavěný prohlížeč (`⌘⇧B` / `Ctrl+Shift+B`), ve kterém Claude umí
+pustit dev server, klikat a dělat screenshoty. Napiš:
 
 ```text
-Pusť `npm run dev`, otevři appku v prohlížeči na šířce 375 px a udělej screenshot.
+Pusť appku ve vestavěném prohlížeči, nastav šířku 375 px a udělej screenshot.
 Porovnej ho se skicou @podklady/skica.png. Vypiš rozdíly a oprav je. Opakuj, dokud to nesedí.
 ```
+
+Claude si u toho vytvoří `.claude/launch.json` (jak se appka spouští). Po dalších změnách se už do prohlížeče
+podívá sám (**Auto-verify**).
 
 **5. Skill: naučíme Clauda přidávat koně.** Skill je návod, který si Claude přečte, jen když ho potřebuje.
 
@@ -155,7 +158,7 @@ Pak ho vyzkoušej: `/novy-kun líný poník, co miluje Netflix`. (Hotový skill 
 
 ### Krok 3: Swipe, shody a testy
 
-`/clear`, přepni na plán a napiš:
+Nová session (`⌘N` / `Ctrl+N`), režim **Plan** a napiš:
 
 ```text
 Chci rozhodování o koních:
@@ -199,7 +202,7 @@ Chceš raději ladit vlastní appku? Klidně, postup je stejný.
 **2. Najdi, ale ještě neopravuj.**
 
 ```text
-Proklikej appku v prohlížeči jako uživatelka: dej pár srdíček i křížků, obnov stránku,
+Proklikej appku ve vestavěném prohlížeči jako uživatelka: dej pár srdíček i křížků, obnov stránku,
 otevři shody, projeď všechny koně až do konce. Sleduj konzoli prohlížeče.
 Zatím nic neopravuj. Sepiš chyby, které najdeš: co jsi udělal, co se stalo a co se mělo stát.
 ```
@@ -220,7 +223,7 @@ Oprav ty chyby jednu po druhé. Ke každé nejdřív napiš test, který ji zach
 a selže, pak ji oprav a ukaž, že test prošel. Na konci pusť všechny testy a build.
 ```
 
-**4. Nezávislá kontrola.** Vezmi si subagenta, který jen čte a hlásí:
+**4. Nezávislá kontrola.** Vezmi si subagenta, který jen čte a hlásí (v terminálu, `` Ctrl+` ``):
 
 ```bash
 git checkout origin/krok-5 -- .claude/agents/a11y-reviewer.md
@@ -237,6 +240,8 @@ od nejzávažnějšího. Kontrast oprav v design tokenech, ne v komponentách.
 Udělej screenshoty appky na šířce 375 px, 768 px a 1280 px, swipovací obrazovku i seznam shod.
 Ověř, že se dá všechno ovládat jen klávesnicí (Tab, Enter, šipky, Esc). Oprav, co nesedí.
 ```
+
+Co přesně Claude změnil, uvidíš v diffu (`⌘⇧D` nebo klik na `+12 −3` u změn). K řádkům můžeš psát komentáře.
 
 **Bonus:** `/code-review` zkontroluje tvoje změny čerstvýma očima (nový kontext, který neviděl, jak jsi to psala).
 

@@ -80,8 +80,8 @@ export function TasteSlide({ step }: SlideProps) {
         ))}
       </div>
       <Reveal step={step} at={1}>
-        <Prompt label="Claude Code" style={{ marginTop: 48 }}>
-          /plugin install <span className="c">frontend-design@claude-plugins-official</span>
+        <Prompt label="V appce" style={{ marginTop: 48 }}>
+          <span className="c">+</span> vedle pole pro zprávu → <span className="c">Plugins</span> → frontend-design → nainstalovat
         </Prompt>
       </Reveal>
     </Slide>
@@ -208,16 +208,16 @@ export function EyesSlide({ step }: SlideProps) {
       <Reveal step={step} at={1}>
         <div className="grid3" style={{ marginTop: 60 }}>
           <div className="card">
-            <div className="h3">Claude in Chrome</div>
-            <p className="small">Rozšíření do Chromu. <code className="mono">claude --chrome</code> nebo <code className="mono">/chrome</code>. Kliká, čte konzoli, dělá screenshoty. <b>Tohle dnes používáme.</b></p>
+            <div className="h3">Vestavěný prohlížeč</div>
+            <p className="small"><span className="kbd" style={{ fontSize: 20 }}>⌘⇧B</span> v appce. Claude pustí dev server, kliká, dělá screenshoty a s <b>Auto-verify</b> se po každé změně podívá sám. <b>Tohle dnes používáme.</b></p>
           </div>
           <div className="card">
-            <div className="h3">Desktopová appka</div>
-            <p className="small">Vestavěný prohlížeč a „Auto-verify“: po každé změně se sám podívá.</p>
+            <div className="h3">Claude in Chrome</div>
+            <p className="small">Rozšíření do Chromu: když má Claude pracovat ve tvém přihlášeném prohlížeči. V CLI <code className="mono">claude --chrome</code>.</p>
           </div>
           <div className="card">
             <div className="h3">Playwright MCP</div>
-            <p className="small">Záloha pro WSL a jiné prohlížeče:<br /><code className="mono" style={{ fontSize: 20 }}>claude mcp add playwright -- npx @playwright/mcp@latest</code></p>
+            <p className="small">Pro jiné nástroje a CI: stejné oči přes MCP server <code className="mono" style={{ fontSize: 20 }}>@playwright/mcp</code>.</p>
           </div>
         </div>
       </Reveal>
@@ -237,11 +237,10 @@ export function McpSlide({ step }: SlideProps) {
             nové nástroje.
           </p>
           <Reveal step={step} at={1}>
-            <Prompt label="Terminál" style={{ marginTop: 40, fontSize: 24 }}>
-              claude mcp add <span className="c">jmeno</span> -- <span className="c">příkaz</span>{'\n'}
-              claude mcp add --transport http <span className="c">jmeno URL</span>{'\n'}
-              <span className="d"># v Claudovi: /mcp</span>
+            <Prompt label=".mcp.json" style={{ marginTop: 32, fontSize: 21 }}>
+              {'{ "mcpServers": {\n    "'}<span className="c">playwright</span>{'": {\n      "command": "npx",\n      "args": ["'}<span className="c">@playwright/mcp@latest</span>{'"]\n    }\n} }'}
             </Prompt>
+            <p className="small" style={{ marginTop: 16 }}>Nebo prostě řekni Claudovi: „přidej MCP server X do projektu“.</p>
           </Reveal>
           <Reveal step={step} at={2}>
             <p className="small" style={{ marginTop: 28 }}>
@@ -274,9 +273,9 @@ export function Krok2Slide({ step }: SlideProps) {
       minutes={25}
       checkpoint="krok-2"
       todo={[
-        <><code className="mono">/clear</code> (nový úkol, nová hlava)</>,
+        <>Nová session <span className="kbd">⌘N</span> (nový úkol, nová hlava)</>,
         <>Skica + design + <b>nejdřív tokeny</b> (prompt v Krocích)</>,
-        <><code className="mono">/chrome</code>: screenshot na 375 px, porovnej se skicou, oprav</>,
+        <>Vestavěný prohlížeč: screenshot na 375 px, porovnej se skicou, oprav</>,
         <>Bonus: skill <code className="mono">/novy-kun líný poník, co miluje Netflix</code></>,
         <>Commit</>,
       ]}
@@ -362,7 +361,7 @@ export function Krok3Slide({ step }: SlideProps) {
       minutes={30}
       checkpoint="krok-3"
       todo={[
-        <><code className="mono">/clear</code> a plan mode</>,
+        <>Nová session <span className="kbd">⌘N</span> a režim Plan</>,
         <>Tahání karty (motion), tlačítka, šipky, okno „Je to shoda!“, localStorage</>,
         <>Logika do <code className="mono">src/lib/</code>: <b>nejdřív červené testy</b>, pak kód</>,
         <><i>„Pusť testy a build a ukaž mi výstup.“</i></>,

@@ -85,7 +85,7 @@ export function ContextSlide({ step }: SlideProps) {
           <div className="card"><div className="h3 mono" style={{ fontSize: 40 }}>/context</div><p className="small">Ukáže, čím je kontext zaplněný.</p></div>
         </Reveal>
         <Reveal step={step} at={2} delay={0.2}>
-          <div className="card"><div className="h3 mono" style={{ fontSize: 40 }}>/clear</div><p className="small">Nový úkol = čistá hlava. Nejlevnější trik pro lepší výsledky.</p></div>
+          <div className="card"><div className="h3 mono" style={{ fontSize: 40 }}>⌘N / Ctrl+N</div><p className="small">Nový úkol = nová session, čistá hlava. Nejlevnější trik pro lepší výsledky.</p></div>
         </Reveal>
       </div>
     </Slide>
@@ -120,16 +120,16 @@ export function ThreeThingsSlide({ step }: SlideProps) {
 /* ------------------------------------------------------------------ */
 export function TourSlide() {
   const keys: [string, string][] = [
-    ['Shift+Tab', 'režim: ruční → auto úpravy → plán → auto'],
+    ['⌘⇧M', 'režim: Manual → Accept edits → Plan → Auto'],
     ['Esc', 'zastav! (klidně hned, jak jde špatně)'],
-    ['Esc Esc', 'vrať se v čase: kód i konverzace'],
-    ['@soubor', 'přilož soubor do zprávy'],
-    ['!příkaz', 'pusť příkaz v terminálu'],
-    ['Ctrl+V', 'vlož obrázek (i na Macu Ctrl!)'],
-    ['/model', 'který model mi teď odpovídá'],
+    ['⌘N', 'nová session pro nový úkol'],
+    ['@soubor', 'přilož soubor, obrázek přes + nebo přetažením'],
+    ['⌘⇧B', 'vestavěný prohlížeč: Claude vidí appku'],
+    ['Ctrl+`', 'terminál přímo v appce'],
+    ['⌘⇧D', 'diff: co přesně Claude změnil'],
   ]
   return (
-    <Slide kicker="Claude Code za 60 sekund" title="Sedm kláves, které stačí" style={{ paddingTop: 90 }}>
+    <Slide kicker="Desktopová appka · záložka Code" title="Sedm zkratek, které stačí" style={{ paddingTop: 90 }}>
       <table className="tbl tight">
         <tbody>
           {keys.map(([k, v]) => (
@@ -141,8 +141,8 @@ export function TourSlide() {
         </tbody>
       </table>
       <p className="small" style={{ marginTop: 12, fontSize: 22 }}>
-        Auto režim je od srpna výchozí: Claude dělá věci bez ptaní a hlídá ho bezpečnostní klasifikátor. Na učení
-        doporučuju začít v ručním režimu nebo v plánu, ať vidíš, co dělá.
+        Na Windows místo ⌘ zmáčkni Ctrl. Režim Auto: Claude dělá věci bez ptaní a hlídá ho bezpečnostní klasifikátor.
+        Na učení doporučuju začít v Manual nebo Plan, ať vidíš, co dělá.
       </p>
     </Slide>
   )
@@ -157,10 +157,10 @@ export function Krok0Slide({ step }: SlideProps) {
       minutes={5}
       checkpoint="main"
       todo={[
-        <>Naklonuj repo a spusť <code className="mono">claude</code></>,
+        <>Naklonuj repo a otevři ho v appce: <b>Code → Local → Open folder…</b></>,
         <>Zeptej se: <i>„Co je v téhle složce a co máme postavit?“</i></>,
-        <>Vyzkoušej <span className="kbd">Shift+Tab</span> a najdi <b>plan mode</b></>,
-        <>Pusť <code className="mono">/context</code> a <code className="mono">!git log</code></>,
+        <>Najdi přepínač režimů pod polem pro zprávu a v něm <b>Plan</b></>,
+        <>Pusť <code className="mono">/context</code> a otevři terminál <span className="kbd">Ctrl+`</span></>,
       ]}
       done={<>Claude ti vlastními slovy popsal zadání a víš, kde je plánovací režim.</>}
     />

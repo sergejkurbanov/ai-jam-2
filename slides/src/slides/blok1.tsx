@@ -106,7 +106,7 @@ export function PlanSlide({ step }: SlideProps) {
           <div>
             <div className="h3">Plan mode</div>
             <p className="body" style={{ marginTop: 12 }}>
-              <span className="kbd">Shift+Tab</span> až na <b>plan mode</b> nebo <code className="mono">/plan úkol</code>.
+              Přepínač režimů pod polem pro zprávu → <b>Plan</b> (<span className="kbd">⌘⇧M</span>).
               Claude jen čte a přemýšlí, nic nemění.
             </p>
           </div>
@@ -229,7 +229,7 @@ export function Krok1Slide({ step }: SlideProps) {
       minutes={25}
       checkpoint="krok-1"
       todo={[
-        <>V plan mode: <i>„polož mi otázky, jednu po druhé“</i></>,
+        <>V režimu Plan: <i>„polož mi otázky, jednu po druhé“</i></>,
         <>Nech si naplánovat Vite + React + TS + Tailwind + Vitest. <b>Přečti plán</b>, pak schval</>,
         <><code className="mono">/init</code> a doplň pravidla do CLAUDE.md</>,
         <>Hook: Prettier po každé úpravě</>,

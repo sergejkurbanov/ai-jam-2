@@ -21,7 +21,7 @@ na `krok-4`, takže zpoždění z bloku 2 se tam smaže.
 
 - **Návod krok po kroku, ať se dá dohnat bez vyrušení** → [`kroky.md`](kroky.md) + checkpointy. Ukaž to hned v úvodu a pak připomínej.
 - **Git a další věci instalovat předem** → [`instalace.md`](instalace.md) včetně generálky. Ať pošlou screenshot.
-- **Všichni v jednom nástroji** → jen Claude Code. Alternativy jen jako jeden slajd na konci.
+- **Všichni v jednom nástroji** → desktopová appka Claude, záložka Code. CLI jen jako poznámka v Taháku, alternativy jako jeden slajd na konci.
 - **Pomalejší rozjezd praktické části** → krok 0 je jen „rozhlédni se v Claudovi“, krok 1 začíná rozhovorem, ne kódem.
 - **Víc do hloubky: .md soubory pro agenty, skills, subagenti, browser automation, debugging AI kódu** → to je přesně obsah bloků 1–3.
 - Fungovalo a chceme znovu: připravený projekt, koučové, střídání teorie a praxe, vše na GitHubu.
@@ -30,7 +30,7 @@ na `krok-4`, takže zpoždění z bloku 2 se tam smaže.
 
 - [ ] Push repa: větve `web` (výchozí), `main`, `krok-0` … `krok-6`. Na GitHubu nastav výchozí větev na `web`.
 - [ ] GitHub Pages pro prezentaci (Settings → Pages → GitHub Actions). Pro větev `web` povol nasazení v Settings → Environments → github-pages.
-- [ ] Rozeslat [`instalace.md`](instalace.md) aspoň týden předem, sbírat screenshoty z generálky.
+- [ ] Rozeslat [`instalace.md`](instalace.md) aspoň týden předem, sbírat screenshoty z ověření.
 - [ ] Guest passy (`/passes` v Claude Code) pro ty, kdo nemají Pro.
 - [ ] Projet si celý workshop načisto se stopkami, na stejném plánu (Pro) jako účastnice, ať víš, kde dojdou limity.
 - [ ] Na místě: Wi-Fi heslo na slajd 3, prodlužky, adaptéry na HDMI.
@@ -53,11 +53,11 @@ její jméno, a chybějící okrajový případ). A žádnou nechytil TypeScript
 ## Tipy pro kouče
 
 - Zaseknutá účastnice? Nejdřív `git status` a `git log --oneline -5`. Pak klidně checkpoint. Nikdo nemusí mít „svůj“ kód.
-- Claude se točí v kruhu → `Esc`, `/clear`, nové konkrétnější zadání.
-- Auto režim je od srpna 2026 výchozí. Pro učení doporuč na začátku ruční schvalování nebo plán (`Shift+Tab`), ať vidí, co Claude dělá.
-- `claude: command not found` → nový terminál, `claude doctor`. Windows: PowerShell, ne CMD.
+- Claude se točí v kruhu → `Esc`, nová session (`⌘N` / `Ctrl+N`), nové konkrétnější zadání.
+- Režim se přepíná pod polem pro zprávu (Mac `⌘⇧M`), `Shift+Tab` v appce nefunguje. Na učení doporuč Manual nebo Plan, ať vidí, co Claude dělá.
+- Záložka Code nejde → přihlášení účtem s Pro? Appka aktuální? Terminál v appce je pod `` Ctrl+` ``.
 - Dojde limit na Pro → přepnout na menší model (`/model`), jinak jet dál s checkpointy a sledovat lektora.
-- Claude in Chrome nefunguje (WSL, jiný prohlížeč) → záloha: `claude mcp add playwright -- npx @playwright/mcp@latest`.
+- Vestavěný prohlížeč (`⌘⇧B` / `Ctrl+Shift+B`) nic neukazuje → ať Claude zkontroluje `.claude/launch.json` (příkaz `npm run dev`, port 5173).
 - Prompty z [`kroky.md`](kroky.md) jsou návrh. Ať je klidně píšou po svém, jen ať zůstane: kontext, omezení, jak ověřit.
 
 ## Jak upravit checkpointy

@@ -67,7 +67,7 @@ export function DebugSlide({ step }: SlideProps) {
       </div>
       <Reveal step={step} at={2}>
         <p className="body" style={{ marginTop: 40 }}>
-          Když řekneš jen „oprav to“, Claude často opraví <i>příznak</i>, ne <i>příčinu</i>. Dvakrát neúspěšně? <code className="mono">/clear</code> a lepší zadání s tím, co už víš.
+          Když řekneš jen „oprav to“, Claude často opraví <i>příznak</i>, ne <i>příčinu</i>. Dvakrát neúspěšně? Nová session a lepší zadání s tím, co už víš.
         </p>
       </Reveal>
     </Slide>
@@ -247,7 +247,7 @@ export function HabitsSlide({ step }: SlideProps) {
     'Plán před kódem',
     'Nech se vyzpovídat',
     'Buď konkrétní: soubor, příznak, cíl',
-    'Nový úkol = /clear',
+    'Nový úkol = nová session',
     'Zastav ho brzo (Esc)',
     'Malé commity = záchranná síť',
     'Test nejdřív červeně',
@@ -272,12 +272,12 @@ export function HabitsSlide({ step }: SlideProps) {
 /* ------------------------------------------------------------------ */
 export function UnderusedSlide({ step }: SlideProps) {
   const items = [
-    ['Esc Esc / /rewind', 'vrátit kód i konverzaci o kus zpět. Odvaha zkoušet.'],
+    ['Diff ⌘⇧D', 'co přesně změnil, s komentáři k jednotlivým řádkům'],
     ['Výstupní styl Learning', 'Claude nechá část kódu na tobě. Ideální, když se učíš.'],
-    ['/btw', 'rychlá otázka bokem, která nezaplní kontext'],
-    ['Claude in Chrome', 'agent, který vidí, co nakódoval'],
+    ['Vedlejší chat ⌘;', 'rychlá otázka bokem, která nezaplní kontext'],
+    ['Auto-verify', 'agent, který se sám podívá, co nakódoval'],
     ['Skills a hooky', 'jednou napíšeš, pořád to funguje'],
-    ['Paralelní sezení', 'claude -w jmeno: víc úkolů najednou, každý ve vlastní kopii repa'],
+    ['Paralelní sessions', 'víc úkolů najednou, každý ve vlastní kopii repa (worktree)'],
   ]
   return (
     <Slide kicker="Co lidi skoro nepoužívají" title="Využíváš ho celého?">

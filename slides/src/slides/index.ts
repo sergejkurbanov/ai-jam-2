@@ -58,7 +58,7 @@ Ať si všichni teď otevřou web (QR). Naklonovat a spustit claude zatím nemus
     id: 'context', title: 'Kontext', steps: 3, minutes: 2, Component: ContextSlide, section: INTRO,
     notes: `Claude nemá paměť mezi sezeními. Ví jen, co je v kontextovém okně.
 [klik] Každý přečtený soubor a výstup příkazu se tam přidává. Okno je velké (1M tokenů), ale čím víc balastu, tím horší výsledky.
-[klik] /context ukáže zaplnění. /clear = nový úkol, čistá hlava. Nejlevnější trik pro lepší výsledky.`,
+[klik] /context ukáže zaplnění. Nový úkol = nová session (⌘N), čistá hlava. Nejlevnější trik pro lepší výsledky.`,
   },
   {
     id: 'three', title: 'Tři věci', steps: 3, minutes: 1, Component: ThreeThingsSlide, section: INTRO,
@@ -67,9 +67,9 @@ Každý blok jednu z nich procvičí.`,
   },
   {
     id: 'tour', title: 'Klávesy', minutes: 1, Component: TourSlide, section: INTRO,
-    notes: `Ukázat živě v terminálu: Shift+Tab přepíná režimy (všimněte si popisku dole). Esc zastaví. Esc Esc = rewind.
-Auto režim je teď výchozí. Na učení doporučuju ruční nebo plán, ať vidíte, co dělá.
-Ctrl+V na obrázky, i na Macu je to Ctrl.`,
+    notes: `Ukázat živě v appce: přepínač režimů pod polem pro zprávu (⌘⇧M), Shift+Tab tu nefunguje. Esc zastaví.
+Prohlížeč ⌘⇧B, terminál Ctrl+\`, diff ⌘⇧D. Na Windows Ctrl místo ⌘.
+Na učení doporučuju Manual nebo Plan, ať vidíte, co dělá. Kdo jede v CLI, má rozdíly v Taháku.`,
   },
   {
     id: 'krok0', title: 'Krok 0: rozhlédni se', steps: 1, minutes: 5, Component: Krok0Slide, section: INTRO,
@@ -160,18 +160,17 @@ Skills fungují i v Claude.ai a dalších nástrojích (standard Agent Skills).`
   {
     id: 'eyes', title: 'Dej AI oči', steps: 2, minutes: 2, Component: EyesSlide, section: B2,
     notes: `Bez prohlížeče Claude maluje poslepu: napíše CSS a doufá.
-[klik] Claude in Chrome: rozšíření, claude --chrome nebo /chrome. Dnes používáme tohle.
-Desktopová appka má vestavěný prohlížeč s auto-verify. Playwright MCP jako záloha (WSL, Firefox).
+[klik] Dnes používáme vestavěný prohlížeč v appce (⌘⇧B) s Auto-verify. Claude in Chrome, když potřebujete svůj přihlášený prohlížeč. Playwright MCP pro jiné nástroje.
 Živě ukázat: screenshot na 375 px vedle skici a „oprav rozdíly“.`,
   },
   {
     id: 'mcp', title: 'MCP', steps: 3, minutes: 1.5, Component: McpSlide, section: B2,
     notes: `MCP = USB-C pro AI. Standardní zásuvka na nové nástroje.
-[klik] Přidání jedním příkazem. [klik] Bezpečnost: MCP server je kód, který běží u vás. Jen důvěryhodné.`,
+[klik] Přidání: .mcp.json v projektu, nebo ať to udělá Claude. [klik] Bezpečnost: MCP server je kód, který běží u vás. Jen důvěryhodné.`,
   },
   {
     id: 'krok2', title: 'Krok 2: ze skici do komponent', steps: 1, minutes: 25, Component: Krok2Slide, section: B2,
-    notes: `Živě ukázat cca 7 min (prompt, tokeny, /chrome screenshot, oprava). Pak 15–20 min.
+    notes: `Živě ukázat cca 7 min (prompt, tokeny, screenshot ve vestavěném prohlížeči, oprava). Pak 15–20 min.
 Kdo je rychlá: skill /novy-kun. Kdo nestíhá: origin/krok-2.`,
   },
   {
@@ -186,7 +185,7 @@ Kdo je rychlá: skill /novy-kun. Kdo nestíhá: origin/krok-2.`,
   },
   {
     id: 'krok3', title: 'Krok 3: swipe, shody, testy', steps: 1, minutes: 30, Component: Krok3Slide, section: B2,
-    notes: `Největší krok. Živě: plan mode, prompt, ukázat červené testy, pak zelené. Pak 20 min práce.
+    notes: `Největší krok. Živě: režim Plan, prompt, ukázat červené testy, pak zelené. Pak 20 min práce.
 Rychlice: krok 4 (seznam shod). Na začátku bloku 3 všichni skočí na krok-4, takže zpoždění se smaže. Pauza.`,
   },
 
@@ -202,7 +201,7 @@ Rychlice: krok 4 (seznam shod). Na začátku bloku 3 všichni skočí na krok-4,
   {
     id: 'debug', title: 'Debugging', steps: 3, minutes: 1.5, Component: DebugSlide, section: B3,
     notes: `Šest kroků. Nejdřív najít a pochopit, pak opravit.
-[klik] Test a nejmenší oprava. [klik] „Oprav to“ často opraví příznak. Dvakrát nic? /clear.`,
+[klik] Test a nejmenší oprava. [klik] „Oprav to“ často opraví příznak. Dvakrát nic? Nová session.`,
   },
   {
     id: 'bughunt', title: 'Krok 5a: lov chyb', steps: 1, minutes: 15, Component: BugHuntSlide, section: B3,

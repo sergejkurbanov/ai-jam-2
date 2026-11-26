@@ -4,7 +4,8 @@ Podklady k prezentaci, posbírané 26. 11. 2026. Co se nepodařilo ověřit z pr
 
 ## Claude Code: oficiální dokumentace
 
-- Instalace a přihlášení: [code.claude.com/docs/en/setup](https://code.claude.com/docs/en/setup), [troubleshoot-install](https://code.claude.com/docs/en/troubleshoot-install)
+- Desktopová appka, záložka Code (na workshopu ji používáme): [desktop](https://code.claude.com/docs/en/desktop), [desktop-quickstart](https://code.claude.com/docs/en/desktop-quickstart), stažení na [claude.com/download](https://claude.com/download)
+- CLI, instalace a přihlášení: [code.claude.com/docs/en/setup](https://code.claude.com/docs/en/setup), [troubleshoot-install](https://code.claude.com/docs/en/troubleshoot-install)
 - Best practices (včetně sekce o radách, které už neplatí): [code.claude.com/docs/en/best-practices](https://code.claude.com/docs/en/best-practices)
 - Paměť, CLAUDE.md, `.claude/rules`, AGENTS.md: [memory](https://code.claude.com/docs/en/memory)
 - Režimy oprávnění, plán, auto režim: [permission-modes](https://code.claude.com/docs/en/permission-modes)
@@ -21,7 +22,8 @@ Podklady k prezentaci, posbírané 26. 11. 2026. Co se nepodařilo ověřit z pr
 - **Auto režim** je od srpna 2026 výchozí: klasifikátor kontroluje každou akci a blokuje rizikové.
 - Zkratka `#` pro zápis do paměti zmizela ve verzi 2.0.70. Teď se prostě řekne „zapiš si to do CLAUDE.md“.
 - AGENTS.md se čte nativně (pokud není CLAUDE.md). Auto memory zapisuje Claude sám do `~/.claude/projects/…/memory/`.
-- Obrázky: `Ctrl+V` všude, i na Macu.
+- Desktopová appka má Claude Code v sobě (bez CLI a bez Node). Režimy přepíná přepínač pod polem pro zprávu (`⌘⇧M`), `Shift+Tab` tam nefunguje. Vestavěný prohlížeč `⌘⇧B` s Auto-verify (konfigurace v `.claude/launch.json`), terminál `` Ctrl+` ``, diff `⌘⇧D`. Sdílí s CLI `CLAUDE.md`, skills, hooky a `.mcp.json`.
+- CLI: obrázky `Ctrl+V` všude, i na Macu.
 - `ultrathink` pořád funguje (zvedne effort na xhigh), „think hard“ už ne. Nově `/effort`.
 - Claude in Chrome je GA od června 2026, desktopová appka má vestavěný prohlížeč s „Auto-verify“.
 - Free plán Claude Code nemá. Pro: 20 $/měsíc + DPH, sdílený limit s chatem (5h okno + týdenní).

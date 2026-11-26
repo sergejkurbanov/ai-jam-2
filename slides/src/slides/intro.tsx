@@ -153,7 +153,7 @@ export function StartSlide({ step }: SlideProps) {
         <div style={{ display: 'grid', gap: 28 }}>
           <Prompt label="Terminál" style={{ fontSize: 23 }}>
             {CLONE}
-            {'\n'}cd konicek{'\n'}claude
+            {'\n'}<span className="d"># pak v appce Claude: Code → Local → Open folder… → konicek</span>
           </Prompt>
           <Reveal step={step} at={1}>
             <div className="card">

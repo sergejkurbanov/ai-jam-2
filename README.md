@@ -17,9 +17,9 @@ Tinder pro koně, od prázdného repa po nasazený frontend. **Ty vedeš, AI kó
 
 ```bash
 git clone -b main https://github.com/sergejkurbanov/ai-jam-2.git konicek
-cd konicek
-claude
 ```
+
+Pak v desktopové appce Claude: záložka **Code** → **Local** → **Open folder…** → `konicek`.
 
 ## Jak je repo poskládané
 
