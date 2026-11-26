@@ -65,6 +65,5 @@ gh auth status
 ```
 
 Všechny tři příkazy by měly vypsat verzi nebo „Logged in“, a v appce Claude by měla jít otevřít záložka Code.
-Pošli nám prosím screenshot do Slacku, ať víme, že je všechno ready.
 
 Uvidíme se na AI jamu 💘

@@ -20,7 +20,7 @@ na `krok-4`, takže zpoždění z bloku 2 se tam smaže.
 ## Co se poučit ze zpětné vazby z AI jamu #1
 
 - **Návod krok po kroku, ať se dá dohnat bez vyrušení** → [`kroky.md`](kroky.md) + checkpointy. Ukaž to hned v úvodu a pak připomínej.
-- **Git a další věci instalovat předem** → [`instalace.md`](instalace.md) včetně generálky. Ať pošlou screenshot.
+- **Git a další věci instalovat předem** → [`instalace.md`](instalace.md) s krátkým ověřením na konci.
 - **Všichni v jednom nástroji** → desktopová appka Claude, záložka Code. CLI jen jako poznámka v Taháku, alternativy jako jeden slajd na konci.
 - **Pomalejší rozjezd praktické části** → krok 0 je jen „rozhlédni se v Claudovi“, krok 1 začíná rozhovorem, ne kódem.
 - **Víc do hloubky: .md soubory pro agenty, skills, subagenti, browser automation, debugging AI kódu** → to je přesně obsah bloků 1–3.
@@ -30,7 +30,7 @@ na `krok-4`, takže zpoždění z bloku 2 se tam smaže.
 
 - [ ] Push repa: větve `web` (výchozí), `main`, `krok-0` … `krok-6`. Na GitHubu nastav výchozí větev na `web`.
 - [ ] GitHub Pages pro prezentaci (Settings → Pages → GitHub Actions). Pro větev `web` povol nasazení v Settings → Environments → github-pages.
-- [ ] Rozeslat [`instalace.md`](instalace.md) aspoň týden předem, sbírat screenshoty z ověření.
+- [ ] Rozeslat [`instalace.md`](instalace.md) aspoň týden předem.
 - [ ] Projet si celý workshop načisto se stopkami, na stejném plánu (Pro) jako účastnice, ať víš, kde dojdou limity.
 - [ ] Na místě: Wi-Fi heslo na slajd 3, prodlužky, adaptéry na HDMI.
 - [ ] Kouče seznámit s touhle stránkou a s chybami v `krok-4`.
