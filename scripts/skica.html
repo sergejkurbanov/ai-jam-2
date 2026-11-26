@@ -1,0 +1,106 @@
+<!doctype html>
+<!-- "Napkin" wireframe for the workshop. Render to PNG with:
+     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --screenshot=skica.png --window-size=1600,1000 file://$PWD/scripts/skica.html -->
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin: 0; background: #fbf8f1; }
+  svg { display: block; }
+  text { font-family: 'Chalkboard SE', 'Comic Sans MS', 'Bradley Hand', cursive; fill: #2d2a32; }
+  .pen { fill: none; stroke: #2d2a32; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+  .thin { stroke-width: 2; }
+  .red { stroke: #e0463a; } .redt { fill: #e0463a; }
+  .note { font-size: 26px; fill: #e0463a; }
+</style>
+</head>
+<body>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40,0 L0,0 0,40" fill="none" stroke="#e7e1d3" stroke-width="1"/></pattern>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10" fill="none" stroke="#e0463a" stroke-width="2"/></marker>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+
+  <text x="60" y="70" font-size="44" font-weight="bold">Koníček 🐴 – skica v0.1</text>
+  <text x="60" y="108" font-size="24" fill="#6b6570">(designérka to kreslila na ubrousek v kavárně, nesuďte)</text>
+
+  <g filter="url(#rough)">
+    <!-- ============ phone 1: swipe ============ -->
+    <g transform="translate(80 150)">
+      <rect class="pen" x="0" y="0" width="380" height="780" rx="44"/>
+      <rect class="pen thin" x="150" y="18" width="80" height="12" rx="6"/>
+      <text x="28" y="78" font-size="30" font-weight="bold">🐴 Koníček</text>
+      <rect class="pen thin" x="232" y="50" width="124" height="40" rx="20"/>
+      <text x="246" y="78" font-size="20">💘 Shody (3)</text>
+      <!-- card -->
+      <rect class="pen" x="24" y="110" width="332" height="470" rx="26"/>
+      <path class="pen thin" d="M44,130 L336,420 M336,130 L44,420"/>
+      <text x="96" y="285" font-size="22" fill="#6b6570">FOTKA KONĚ</text>
+      <path class="pen thin" d="M24,400 L356,400" stroke-dasharray="6 8"/>
+      <text x="44" y="452" font-size="38" font-weight="bold">Bára, 6</text>
+      <text x="44" y="486" font-size="20">Hafling · 3 km od tebe</text>
+      <path class="pen thin" d="M44,512 q40,-6 80,0 t80,0 t80,0 t40,0"/>
+      <rect class="pen thin" x="44" y="532" width="76" height="30" rx="15"/><text x="56" y="553" font-size="16">louky</text>
+      <rect class="pen thin" x="130" y="532" width="80" height="30" rx="15"/><text x="142" y="553" font-size="16">mrkev</text>
+      <!-- buttons -->
+      <circle class="pen" cx="110" cy="670" r="46"/><text x="94" y="684" font-size="40">✕</text>
+      <circle class="pen" cx="270" cy="670" r="46"/><text x="250" y="686" font-size="40">♥</text>
+    </g>
+
+    <!-- ============ phone 2: match ============ -->
+    <g transform="translate(620 150)">
+      <rect class="pen" x="0" y="0" width="380" height="780" rx="44"/>
+      <rect class="pen thin" x="150" y="18" width="80" height="12" rx="6"/>
+      <path class="pen thin" d="M20,60 L360,60 M20,120 L360,120 M20,180 L360,180 M20,240 L360,240 M20,300 L360,300 M20,560 L360,560 M20,620 L360,620 M20,680 L360,680 M20,740 L360,740" opacity=".25"/>
+      <rect class="pen" x="30" y="190" width="320" height="400" rx="28" fill="#fbf8f1"/>
+      <text x="62" y="262" font-size="40" font-weight="bold">Je to shoda! 💘</text>
+      <circle class="pen" cx="130" cy="350" r="56"/><text x="108" y="360" font-size="26">TY</text>
+      <circle class="pen" cx="250" cy="350" r="56"/><text x="222" y="362" font-size="34">🐴</text>
+      <text x="60" y="446" font-size="20">Ty a Bára se máte rádi.</text>
+      <rect class="pen" x="60" y="472" width="260" height="48" rx="24"/><text x="104" y="504" font-size="22">Napsat zprávu</text>
+      <text x="138" y="562" font-size="20" text-decoration="underline">Hledat dál</text>
+    </g>
+
+    <!-- ============ phone 3: matches ============ -->
+    <g transform="translate(1160 150)">
+      <rect class="pen" x="0" y="0" width="380" height="780" rx="44"/>
+      <rect class="pen thin" x="150" y="18" width="80" height="12" rx="6"/>
+      <text x="28" y="78" font-size="22">← Zpět</text>
+      <text x="28" y="140" font-size="36" font-weight="bold">Tvoje shody</text>
+      <g>
+        <circle class="pen" cx="80" cy="230" r="44"/><text x="56" y="304" font-size="20">Bára</text>
+        <circle class="pen" cx="190" cy="230" r="44"/><text x="156" y="304" font-size="20">Trojan</text>
+        <circle class="pen" cx="300" cy="230" r="44"/><text x="262" y="304" font-size="20">Doubek</text>
+        <circle class="pen" cx="80" cy="370" r="44" stroke-dasharray="8 10"/>
+        <circle class="pen" cx="190" cy="370" r="44" stroke-dasharray="8 10"/>
+      </g>
+      <rect class="pen thin" x="28" y="500" width="324" height="140" rx="20" stroke-dasharray="8 8"/>
+      <text x="48" y="550" font-size="20">když nic: „Zatím žádná shoda…</text>
+      <text x="48" y="582" font-size="20">  Swipuj dál! 🐴💔"</text>
+    </g>
+  </g>
+
+  <!-- ============ red-pen notes ============ -->
+  <g class="note">
+    <text x="478" y="330" class="note">táhni prstem</text>
+    <text x="478" y="362" class="note">← NE / ANO →</text>
+    <path class="pen red" d="M530,378 Q510,420 440,436" marker-end="url(#arr)"/>
+    <text x="478" y="572" class="note">jméno + věk</text>
+    <text x="478" y="604" class="note">VELKÝM!</text>
+    <path class="pen red" d="M474,592 Q440,600 392,598" marker-end="url(#arr)"/>
+    <text x="478" y="760" class="note">šipky na</text>
+    <text x="478" y="790" class="note">klávesnici</text>
+    <text x="478" y="820" class="note">taky jdou!</text>
+    <path class="pen red" d="M474,800 Q450,812 420,816" marker-end="url(#arr)"/>
+    <text x="1012" y="300" class="note">vyskočí,</text>
+    <text x="1012" y="330" class="note">když se</text>
+    <text x="1012" y="360" class="note">líbíte oba</text>
+    <path class="pen red" d="M1060,376 Q1040,430 976,460" marker-end="url(#arr)"/>
+    <text x="1180" y="972" class="note">na mobilu přes celou šířku!</text>
+    <text x="40" y="972" class="note">barvy teplé a hravé · font s charakterem · ŽÁDNÝ fialový gradient!!!</text>
+  </g>
+</svg>
+</body>
+</html>

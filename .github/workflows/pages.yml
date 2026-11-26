@@ -1,0 +1,45 @@
+# Publishes the presentation + docs (slides/) and the finished app (branch krok-6, at /app/) to GitHub Pages.
+# Runs on every push to `web`. After changing a checkpoint branch, run it by hand (Actions → Run workflow).
+name: Web na GitHub Pages
+
+on:
+  push:
+    branches: [web]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+      - run: git fetch --no-tags origin krok-6
+      - uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: slides/package-lock.json
+      - name: Build the finished app into slides/public/app
+        run: bash scripts/build-app.sh krok-6
+      - name: Build slides and docs
+        working-directory: slides
+        run: |
+          npm ci
+          npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: slides/dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
